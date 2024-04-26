@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Registration.css'
 import config from '../config.js'
-import { Navigate } from 'react-router-dom';
  
 export default function Registration() { 
     const [formData, setFormData] = useState({ 

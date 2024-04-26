@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function AdminHome() {
-  const [AdminData, setAdminData] = useState("");
-
-  useEffect(() => {
-    const storedAdminData = localStorage.getItem('Stockadmin');
-    if (storedAdminData) {
-      const parsedAdminData = JSON.parse(storedAdminData);
-      setAdminData(parsedAdminData)
-    }
-  }, []);
+  
   return (
     <div>
       
