@@ -1,0 +1,18 @@
+[{
+    "sid":"1",
+    "sname":"RELIANCE",
+    "sprice":3000,
+    "status":"green"
+},
+{
+    "sid":"2",
+    "sname":"SWASTIK",
+    "sprice":2000,
+    "status":"green"
+},
+{
+    "sid":"3",
+    "sname":"ONGC",
+    "sprice":303,
+    "status":"green"
+}]

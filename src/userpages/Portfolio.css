@@ -1,0 +1,134 @@
+/* Portfolio.css */
+
+.portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+  }
+  
+  .main-div-portfolio,
+  .sub-main-div-portfolio {
+    flex: 1;
+  }
+  
+  .verticalboxportfolio {
+    width: 100%;
+  }
+  
+  .outsideboxes,
+  .outsideboxinvestments,
+  .outsideboxgraph {
+    background-color: rgba(9, 145, 154, 0.17);
+    border-radius: 10px;
+    border: 1px solid #02a4ff;
+    padding: 20px;
+  }
+  
+  .insideboxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .pintopstocks {
+    color: white;
+  }
+  
+  .button-container-portfolio {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .BuySmallButton,
+  .SellSmallButton {
+    background-color: rgb(81, 201, 81);
+    
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s;
+  }
+  
+  .SellSmallButton {
+    background-color: red;
+  }
+  
+  .BuySmallButton:hover
+   {
+    background-color: rgb(53, 105, 53);
+  }
+  
+  .SellSmallButton:active {
+    background-color: rgb(151, 46, 46);
+    transform: scale(0.95);
+  }
+  
+  h2 {
+    color: white;
+    font-size: 24px;
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+  
+  /* Additional styling for the graph box and investments box */
+  .outsideboxgraph {
+    padding: 20px;
+    margin-bottom: 20px;
+    width:600px;
+  }
+  
+  .outsideboxinvestments {
+    padding: 20px;
+    margin-bottom: 20px;
+    width:400px;
+  }
+  
+  /* Additional styles for the text */
+  a {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  h1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  /* Centering text */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Centering items horizontally and vertically */
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .chartjs-line {
+    border-color: skyblue !important; /* Set line color to sky blue */
+  }
+  
+  /* Customize chart grid lines */
+  .chartjs-grid {
+    color: rgba(255, 255, 255, 0.2) !important; /* Set grid line color to light gray */
+  }
+  
+  /* Customize chart axis labels */
+  .chartjs-axis {
+    color: white !important; /* Set axis label color to white */
+  }

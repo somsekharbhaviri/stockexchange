@@ -1,0 +1,160 @@
+/* Common Styles */
+.text-white {
+  color: white;
+}
+
+.text-gray {
+  color: #555;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 40px; /* Increased spacing for emphasis */
+}
+
+.header h1 {
+  font-size: 3rem; /* Larger heading for impact */
+  margin-bottom: 20px; /* Increased spacing for emphasis */
+}
+
+.header p {
+  font-size: 1.2rem; /* Increased font size for readability */
+}
+
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px; /* Increased spacing for emphasis */
+}
+
+.hero-content {
+  flex: 1;
+  margin-right: 40px; /* Increased margin for balance */
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  margin-bottom: 20px; /* Increased spacing for emphasis */
+}
+
+.hero-content p {
+  text-align: center;
+  font-size: 1.1rem; /* Increased font size for readability */
+}
+
+.hero-image img {
+  max-width: 100%; /* Ensure the image fits within its container */
+  height: auto;
+}
+
+/* Features Section Styles */
+.features-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px; /* Increased spacing for emphasis */
+}
+
+.feature {
+  flex: 1;
+  margin-right: 40px; /* Increased margin for balance */
+}
+
+.feature h3 {
+  font-size: 2rem; /* Larger font size for emphasis */
+  margin-bottom: 20px; /* Increased spacing for emphasis */
+}
+
+.real-time-item p,
+.watchlist-item p {
+  font-size: 1.3rem; /* Increased font size for readability */
+  font-weight: bold; /* Make the text bold */
+  color: black; /* Set text color to black */
+}
+
+
+/* CTA Section Styles */
+.cta-section {
+  text-align: center;
+  margin-bottom: 30px; /* Increased spacing for emphasis */
+}
+
+.cta-section h2 {
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  margin-bottom: 20px; /* Increased spacing for emphasis */
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 30px 0; /* Increased padding for balance */
+}
+
+.footer p {
+  font-size: 1.2rem; /* Increased font size for readability */
+}
+/* Real-Time Data and Watchlist Container Styles */
+.data-container {
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Pie Chart Container Styles */
+.chart-box {
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the box horizontally */
+  padding: 20px; /* Add padding for spacing */
+  background-color: transparent; /* Transparent background */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Real-Time Data and Watchlist Styles */
+.real-time-item,
+.watchlist-item {
+  margin-bottom: 10px; /* Add margin bottom for spacing */
+  color:black;
+  padding: 10px; /* Add padding for spacing */
+  background-color: #fff; /* White background */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Pie Chart Styles */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pie Chart Attributes */
+.chart-attributes {
+  text-align: center; /* Center align the attributes */
+  margin-top: 20px; /* Add margin for spacing */
+}
+
+.chart-attributes h3 {
+  font-size: 1.5rem; /* Adjust font size for heading */
+  margin-bottom: 10px; /* Add spacing below the heading */
+}
+
+.chart-attributes ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.chart-attributes li {
+  font-size: 1.2rem; /* Adjust font size for list items */
+  margin-bottom: 5px; /* Add spacing between list items */
+  color: white; /* Text color */
+}
+
+

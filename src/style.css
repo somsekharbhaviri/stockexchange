@@ -1,0 +1,345 @@
+
+ul{ 
+  margin: 0; 
+  padding: 0; 
+  list-style: none; 
+} 
+ 
+ 
+ 
+.navbar a { 
+  display: inline-block; 
+  padding: 15px 20px; 
+  text-decoration: none; 
+  color: white; 
+} 
+ 
+.navbar a:hover { 
+  background-color:transparent;  
+} 
+ 
+ 
+.navbar ul { 
+  text-align: center; 
+} 
+ 
+.navbar li { 
+  display: inline; 
+  margin-right: 20px;  
+} 
+ 
+ 
+.navbar { 
+   
+  top: 0; 
+  width: 100%; 
+} 
+   
+.logout{ 
+    text-align: end; 
+} 
+   
+ 
+   
+  /* Adding spacing between the header and the navigation bar */ 
+  h2 { 
+    margin-left: 35px;
+    margin-bottom: 20px; 
+    color:white; 
+  } 
+   .button { 
+     
+    background-color: 358FC1; 
+    border: none; 
+    color: white; 
+    padding: 10px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 50px; 
+    margin-top: 20px; 
+    transition: padding-left 0.3s,padding-right 0.3s, background-color 0.3s; 
+  } 
+  input[type=text],input[type=password],input[type=number],input[type=email], 
+  select,input[type=date],textarea 
+  { 
+    width: 100%; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border-radius: 7px; 
+    box-sizing: border-box; 
+    color:white; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  } 
+   
+  label 
+  { 
+    padding: 12px 12px 12px 0; 
+    display: inline-block; 
+    font-weight: bold; 
+    color:aliceblue; 
+  } 
+ 
+  body{ 
+    background-image: url("images/Loginbg.jpg"); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
+} 
+ 
+form{ 
+    background-color: rgba(0, 131, 253, 0); 
+    color:white; 
+    margin: 0 auto; 
+    width: 350px; 
+    padding: 40px ; 
+    border-radius: 1em; 
+    border-color:rgba(24, 122, 214, 0.733); 
+    border-style:solid; 
+    text-align: center; 
+} 
+.Home{ 
+    font-size: xx-large; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+} 
+ 
+.Home:hover{ 
+    color: rgb(41, 207, 207); 
+} 
+ 
+.hr hr { 
+  border: none; 
+  border-top: 2px solid #0085FF; /* Set the color to #0085FF */ 
+  width: 100%; 
+  margin: 10px 0; 
+} 
+ 
+a{ 
+  color:aliceblue; 
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
+} 
+ 
+a:hover{ 
+  color:aquamarine 
+} 
+ 
+ 
+.card  
+{ 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    max-width: 300px; 
+    margin: auto; 
+    text-align: center; 
+    font-family: arial; 
+    border: 1px solid rgb(0, 162, 255); /* Add a 1px solid border with a light gray color */ 
+    padding: 10px; /* Add some padding to the card content */ 
+    color: rgb(255, 255, 255); 
+    border-radius: 13px; 
+    background: rgba(9.63, 145.40, 154.06, 0.17); 
+     
+} 
+ 
+input{ 
+  background-color:  rgba(51, 148, 165, 0.4); 
+  border:none; 
+} 
+ 
+.main-div { 
+  display: flex; 
+  flex-direction: row; 
+} 
+ 
+.outsideboxes{ 
+  width: 650px;  
+  background: rgba(9.63, 145.40, 154.06, 0);  
+  border-radius: 7px;  
+  border: 1px #02A4FF solid;  
+  padding:10px;  
+  margin-left: 30px; 
+  height:auto; 
+} 
+ 
+.insideboxes{ 
+   
+  width: 600px;  
+  height: 40px;  
+  background: rgba(9.63, 145.40, 154.06, 0.17); 
+  border-radius: 7px;  
+  border: 1px #02A4FF solid;  
+  margin-top: 10px; 
+  margin-bottom:10px; 
+  text-align: right; 
+   
+} 
+ 
+.sub-main-div { 
+  display: flex; 
+  margin-right: 40px; 
+  justify-content: right; 
+  width: 100%; 
+} 
+ 
+.verticalbox { 
+  width:auto; 
+} 
+ 
+.verticalbox .outsideboxes { 
+  width: 560px; 
+  height: auto; 
+} 
+ 
+.verticalbox .insideboxes { 
+  width: 500px; 
+  height: 40px; 
+  margin-bottom: 20px; 
+} 
+ 
+p{ 
+color: white; 
+font-size: 20px; 
+font-family: Inria Serif; 
+font-style: italic; 
+font-weight: 500; 
+word-wrap: break-word; 
+text-align: left; 
+margin:20px; 
+} 
+ 
+.portfoliobox{ 
+  width: 730px;  
+  background: rgba(9.63, 145.40, 154.06, 0);  
+  border-radius: 7px;  
+  border: 1px #02A4FF solid;  
+  padding:10px;  
+  margin-left: 30px; 
+  height: auto; 
+} 
+.button { 
+  transition: background-color 0.3s, color 0.3s; 
+} 
+ 
+.button:hover{ 
+  background-color: rgb(41, 207, 207); 
+  color: white; 
+  padding-left:40px; 
+  padding-right:40px; 
+  padding-top:12px; 
+  padding-bottom:12px; 
+   
+} 
+.button-container
+{ 
+  display: flex; 
+  justify-content:right; 
+  margin-top: -33px; 
+  align-items: center; 
+} 
+ 
+ 
+.Fundsbox{ 
+  width: 400px;  
+  height: 200px; 
+  background: rgba(9.63, 145.40, 154.06, 0);  
+  border-radius: 7px;  
+  border: 1px #02A4FF solid;  
+  padding:10px;  
+  margin-left: 30px; 
+  background: rgba(9.63, 145.40, 154.06, 0.17); 
+   
+} 
+ 
+.BuySmallButton{ 
+  background-color: 358FC1; 
+    border: none; 
+    color: white; 
+    padding: 4px 8px; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-top: 8px; 
+    margin-right:9px; 
+    transition: padding-left 0.3s,padding-right 0.3s, background-color 0.2s; 
+  background-color: rgb(81, 201, 81); 
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s; 
+} 
+ 
+.BuySmallButton:active{ 
+  background-color: rgb(53, 105, 53); 
+  transform: scale(0.95);  
+} 
+ 
+.SellSmallButton{ 
+  background-color: 358FC1; 
+    border: none; 
+    color: white; 
+    padding: 4px 8px; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-top: 8px; 
+    margin-right:9px; 
+    transition: padding-left 0.3s,padding-right 0.3s, background-color 0.2s; 
+  background-color: rgb(255, 0, 0); 
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s; 
+} 
+ 
+.SellSmallButton:active{ 
+  background-color: rgb(151, 46, 46); 
+  transform: scale(0.95);  
+ 
+} 
+Link{ 
+  font-size: xx-large; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+} 
+.pintopstocks { 
+  display: flex; 
+  align-items: center; /* Align items vertically center */ 
+  justify-content: left; 
+  text-align: left; 
+  margin-top: 10px; 
+  color: white;
+} 
+ 
+.data-container { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom: 10px; 
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position the dropdown below the login link */
+  left: 0; /* Align the dropdown with the left edge of the login link */
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color:darkblue ;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:skyblue ;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

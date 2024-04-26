@@ -1,0 +1,80 @@
+.main-div {
+    display: flex;
+  }
+  
+  .section {
+    margin-right: 100px;
+  }
+  
+  outsideboxes{ 
+    width: 650px;  
+    background: rgba(9.63, 145.40, 154.06, 0);  
+    border-radius: 7px;  
+    border: 1px #02A4FF solid;  
+    padding:10px;  
+    margin-left: 30px; 
+    height:200px;
+    overflow:scroll;
+    
+  } 
+  .outsideboxes::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for webkit browsers */
+  
+  }
+  .insideboxes {
+    margin: 10px;
+  }
+  
+  .pintopstocks {
+    display: flex;
+    align-items: center;
+  }
+
+  .font-insideboxes {
+    margin-right:30px;
+  }
+  
+  .button-container {
+    display: flex;
+  }
+  
+  .BuySmallButton
+   {
+    margin-right: 10px;
+    margin-top:25px;
+    padding: 5px 10px;
+    border: none;
+    background-color: green;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .BuySmallButton:hover
+  {
+    background-color:darkgreen ;
+  }
+  .SellSmallButton
+   {
+    margin-right: 10px;
+    margin-top:25px;
+    padding: 5px 10px;
+    border: none;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .SellSmallButton:hover
+   {
+    background-color:darkred;
+  }
+  
+  .verticalbox {
+    margin-top: 20px;
+    margin-left: 500px;
+    height: 800px;
+  }
+  
+  .verticalbox h2 {
+    margin-bottom: 10px;
+  }
