@@ -9,12 +9,16 @@ export default function AdminNavBar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+  try {
     localStorage.removeItem('isAdminLoggedIn');
     localStorage.removeItem('admin');
     navigate('/adminlogin');
-    window.location.reload()
-  };
-   
+    window.location.reload();
+  } catch (error) {
+    console.error('Error during logout:', error);
+  }
+};
+
      
   return (
     <div align="left" className='navbar'>     
