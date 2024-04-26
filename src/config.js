@@ -1,4 +1,4 @@
 const config={
-    url:"http://localhost:2065"
+    url:"https://backendapp-zwjp.onrender.com"
 }
 export default config;
