@@ -6,7 +6,7 @@ export default function AccountProfile() {
   const [UserData, setUserData] = useState("");
 
   useEffect(() => {
-    const storedUserData = localStorage.getItem('Stockmember');
+    const storedUserData = sessionStorage.getItem('Stockmember');
     if (storedUserData) {
       const parsedUserData = JSON.parse(storedUserData);
       setUserData(parsedUserData)

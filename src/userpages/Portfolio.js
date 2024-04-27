@@ -34,7 +34,7 @@ export default function Portfolio() {
   useEffect(() => {
    
 
-    const storeduserdata = localStorage.getItem('Stockmember');
+    const storeduserdata = sessionStorage.getItem('Stockmember');
     if (storeduserdata) {
       const parseduserdata = JSON.parse(storeduserdata);
       setuserdata(parseduserdata);
