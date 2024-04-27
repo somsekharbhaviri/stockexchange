@@ -14,7 +14,7 @@ export default function UserLogin({ onUserLogin }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem('Stockmember');
+    const loggedInUser = sessionStorage.getItem('Stockmember');
     if (loggedInUser) {
       navigate("/home");
     }
@@ -31,7 +31,7 @@ export default function UserLogin({ onUserLogin }) {
       const response = await axios.post(`${config.url}/checkstockpurchaserlogin`, formData);
       if (response.data != null) {
         onUserLogin();
-        localStorage.setItem('Stockmember', JSON.stringify(response.data));
+        sessionStorage.setItem('Stockmember', JSON.stringify(response.data));
         navigate("/home");
       } else {
         setMessage("Login Failed")

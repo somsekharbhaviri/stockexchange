@@ -10,8 +10,8 @@ function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
-    const adminLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
-    const userLoggedIn = localStorage.getItem('isUserLoggedIn') === 'true';
+    const adminLoggedIn = sessionStorage.getItem('isAdminLoggedIn') === 'true';
+    const userLoggedIn = sessionStorage.getItem('isUserLoggedIn') === 'true';
 
     setIsAdminLoggedIn(adminLoggedIn);
     setIsUserLoggedIn(userLoggedIn);
@@ -22,12 +22,12 @@ function App() {
   }, []);
 
   const onAdminLogin = () => {
-    localStorage.setItem('isAdminLoggedIn', 'true');
+    sessionStorage.setItem('isAdminLoggedIn', 'true');
     setIsAdminLoggedIn(true);
   };
 
   const onUserLogin = () => {
-    localStorage.setItem('isUserLoggedIn', 'true');
+    sessionStorage.setItem('isUserLoggedIn', 'true');
     setIsUserLoggedIn(true);
   };
 

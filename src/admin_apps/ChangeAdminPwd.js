@@ -37,8 +37,8 @@ export default function ChangeAdminPwd() {
       const response = await axios.put(`${config.url}/changeadminpwd`, {...formData,"email":adminData.email});
       if (response.data != null) 
       {
-        localStorage.removeItem('isAdminLoggedIn');
-        localStorage.removeItem('admin');
+        sessionStorage.removeItem('isAdminLoggedIn');
+        sessionStorage.removeItem('admin');
         navigate('/adminlogin');
         window.location.reload()
       } 

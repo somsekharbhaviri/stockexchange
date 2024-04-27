@@ -41,7 +41,7 @@ export default function AdminLogin({ onAdminLogin }) {
   
       if (response.data != null) {
         onAdminLogin(); 
-        localStorage.setItem('admin', JSON.stringify(response.data));
+        sessionStorage.setItem('admin', JSON.stringify(response.data));
         navigate("/adminhome"); 
       } else {
         setMessage("Login Failed");
