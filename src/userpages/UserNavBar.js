@@ -13,7 +13,7 @@ export default function UserNavBar() {
   const handleLogout = () => {
     sessionStorage.removeItem('isUserLoggedIn');
     sessionStorage.removeItem('Stockmember');
-    navigate('https://ash07.netlify.app/userlogin');
+    navigate('/userlogin');
     window.location.reload()
   };
 
