@@ -1,5 +1,45 @@
-.outsideboxinvestments table {
-    float: right;
-  }
+.profile-container {
+  display: flex;
+  margin-left: 500px;
+  justify-content: center;
+  align-items: center;
   
-  
+}
+
+.profile-box {
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Transparent background */
+}
+
+.outsideboxinvestments {
+  margin-top: 20px;
+}
+
+.profile-table {
+  width: 300px;
+  border-collapse: collapse;
+}
+
+.profile-table td {
+  padding: 15px; /* Increased padding for better spacing */
+  border-bottom: 1px solid #ddd;
+  font-size: 20px; /* Increased font size */
+}
+
+.profile-table td:first-child {
+  font-weight: bold;
+  width: 30%;
+}
+
+/* Hover effect for table rows */
+.profile-table tr:hover {
+  background-color: darkblue; /* Light gray background */
+
+  transition: background-color 0.3s ease;
+}
+h1 {
+  font-size: 50px; /* Increased font size for h1 */
+}

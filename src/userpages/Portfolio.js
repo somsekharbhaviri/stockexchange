@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect} from 'react';
 import graphdata from './data/graph.json';
 import { Line } from "react-chartjs-2";
 import axios from 'axios';
@@ -7,86 +7,97 @@ import config from '../config.js'
 import './Portfolio.css'
 
 export default function Portfolio() {
-  const [userdata, setuserdata] = useState("");
-  const [data, setData] = useState({ boughtstocksdata: [] });
-  const [chartData, setChartData] = useState({
-    labels: graphdata.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users gained",
-        data: graphdata.map((data) => data.userGain),
-      },
-    ],
-  });
+  const [userdata,setuserdata]=useState("")
+  const [data, setData] = useState({ boughtstocksdata: []});
 
-  const fetchData = useCallback(async () => {
-    try {
-      const response = await axios.get(`${config.url}/viewboughtstocks/${userdata.email}`);
-      console.log(response.data);
-      setData({
-        boughtstocksdata: response.data || []
-      });
-    } catch (err) {
+  const deletestock = async (Mystock) => {
+    try{
+      Mystock["email"] = userdata.email;
+      await axios.post(`${config.url}/storemystock`,Mystock)
+      await axios.delete(`${config.url}/deletestocks/${Mystock.email}/${Mystock.ticker}`);
+      fetchData();
+  } catch (err) {
       console.log(err.message);
+  }
+  }
+
+
+
+  async function fetchData() {
+    try {
+        const response = await axios.get(`${config.url}/viewboughtstocks/${userdata.email}`);
+        console.log(response.data);
+        setData({
+            boughtstocksdata: response.data || []
+        });
+    } catch (err) {
+        console.log(err.message);
     }
-  }, [userdata]);
+}   
+
+
 
   useEffect(() => {
-   
-
-    const storeduserdata = sessionStorage.getItem('Stockmember');
-    if (storeduserdata) {
-      const parseduserdata = JSON.parse(storeduserdata);
-      setuserdata(parseduserdata);
-    }
-
-    fetchData();
-
     setChartData(prevState => ({
       ...prevState,
       datasets: [
         {
-          ...prevState.datasets[0],
-          data: graphdata.map((data) => data.userGain),
+          ...prevState.datasets[0], // Keep existing dataset properties
+          data: graphdata.map((data) => data.userGain), // Update data property
         },
       ],
     }));
 
-  }, [userdata, data.boughtstocksdata, fetchData]);
 
-  const deletestock = async (Mystock) => {
-    try {
-      Mystock["email"] = userdata.email;
-      await axios.post(`${config.url}/storemystock`, Mystock);
-      await axios.delete(`${config.url}/deletestocks/${Mystock.email}/${Mystock.ticker}`);
-      fetchData();
-    } catch (err) {
-      console.log(err.message);
+    const storeduserdata=sessionStorage.getItem('Stockmember')
+    if(storeduserdata){
+        const parseduserdata=JSON.parse(storeduserdata)
+        setuserdata(parseduserdata)
     }
-  }
+
+    fetchData()
+      
+      
+  }, [userdata]);
+
+  
+  
+  const [chartData, setChartData] = useState({
+    labels: graphdata.map((data) => data.year), // X-axis labels
+    datasets: [
+      {
+        label: "Users gained",
+        data: graphdata.map((data) => data.userGain),
+        // Add any additional dataset properties here if needed
+      },
+    ],
+  });
+  
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         ticks: {
-          color: 'white'
+          color: 'white' // Solid white color for x-axis labels
         }
       },
       y: {
         ticks: {
-          color: 'white'
+          color: 'white' // Solid white color for y-axis labels
         }
       }
     }
   };
-
   return (
     <div className="portfolio-container">
       <div className="main-div-portfolio">
         <div className="verticalboxportfolio">
           <h2>My Stocks</h2>
           <div align="center" className="outsideboxes">
-            {Array.isArray(data.boughtstocksdata) && data.boughtstocksdata.length > 0 ? (
+            {
+            Array.isArray(data.boughtstocksdata) && data.boughtstocksdata.length > 0 ? (
               data.boughtstocksdata.map((Mystock, index) => (
                 <div key={index} className="insideboxes">
                   <div className="pintopstocks" style={{ marginTop: "15px" }}>
@@ -112,19 +123,17 @@ export default function Portfolio() {
         <div className="verticalboxportfolio">
           <h2 style={{ marginLeft: "-550px" }}>My Graph</h2>
           <div className="outsideboxgraph">
-  <Line 
-    data={chartData} 
-    options={{
-      ...options,
-      maintainAspectRatio: false, // Disable aspect ratio preservation
-      responsive: true, // Enable responsiveness
-    }}
-    width={400} // Explicit width
-    height={300} // Explicit height
-  />
-</div>
-
-
+            <Line 
+              data={chartData} 
+              options={{
+                ...options,
+                maintainAspectRatio: false, // Disable aspect ratio preservation
+                responsive: true, // Enable responsiveness
+              }}
+              width={400} // Explicit width
+              height={300} // Explicit height
+            />
+          </div>
         </div>
         <div className="verticalboxportfolio">
           <h2>Investments</h2>
