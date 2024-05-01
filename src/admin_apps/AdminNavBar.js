@@ -12,7 +12,7 @@ export default function AdminNavBar() {
   try {
     sessionStorage.removeItem('isAdminLoggedIn');
     sessionStorage.removeItem('admin');
-    navigate('/adminlogin');
+    navigate('https://ash07.netlify.app/adminlogin');
     window.location.reload();
   } catch (error) {
     console.error('Error during logout:', error);
