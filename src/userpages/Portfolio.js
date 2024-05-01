@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import graphdata from './data/graph.json';
 import { Line } from "react-chartjs-2";
 import axios from 'axios';
@@ -7,35 +7,30 @@ import config from '../config.js'
 import './Portfolio.css'
 
 export default function Portfolio() {
-  const [userdata,setuserdata]=useState("")
-  const [data, setData] = useState({ boughtstocksdata: []});
+  const [userdata, setuserdata] = useState("");
+  const [data, setData] = useState({ boughtstocksdata: [] });
 
   const deletestock = async (Mystock) => {
-    try{
+    try {
       Mystock["email"] = userdata.email;
-      await axios.post(`${config.url}/storemystock`,Mystock)
+      await axios.post(`${config.url}/storemystock`, Mystock)
       await axios.delete(`${config.url}/deletestocks/${Mystock.email}/${Mystock.ticker}`);
       fetchData();
-  } catch (err) {
-      console.log(err.message);
-  }
-  }
-
-
-
-  async function fetchData() {
-    try {
-        const response = await axios.get(`${config.url}/viewboughtstocks/${userdata.email}`);
-        console.log(response.data);
-        setData({
-            boughtstocksdata: response.data || []
-        });
     } catch (err) {
-        console.log(err.message);
+      console.log(err.message);
     }
-}   
+  }
 
-
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await axios.get(`${config.url}/viewboughtstocks/${userdata.email}`);
+      setData({
+        boughtstocksdata: response.data || []
+      });
+    } catch (err) {
+      console.log(err.message);
+    }
+  }, [userdata]);
 
   useEffect(() => {
     setChartData(prevState => ({
@@ -48,20 +43,16 @@ export default function Portfolio() {
       ],
     }));
 
-
-    const storeduserdata=sessionStorage.getItem('Stockmember')
-    if(storeduserdata){
-        const parseduserdata=JSON.parse(storeduserdata)
-        setuserdata(parseduserdata)
+    const storeduserdata = sessionStorage.getItem('Stockmember')
+    if (storeduserdata) {
+      const parseduserdata = JSON.parse(storeduserdata)
+      setuserdata(parseduserdata)
     }
 
     fetchData()
-      
-      
-  }, [userdata]);
 
-  
-  
+  }, [userdata, fetchData]);
+
   const [chartData, setChartData] = useState({
     labels: graphdata.map((data) => data.year), // X-axis labels
     datasets: [
@@ -72,7 +63,6 @@ export default function Portfolio() {
       },
     ],
   });
-  
 
   const options = {
     responsive: true,
@@ -90,24 +80,23 @@ export default function Portfolio() {
       }
     }
   };
+
   return (
     <div className="portfolio-container">
       <div className="main-div-portfolio">
         <div className="verticalboxportfolio">
           <h2>My Stocks</h2>
           <div align="center" className="outsideboxes">
-            {
-            Array.isArray(data.boughtstocksdata) && data.boughtstocksdata.length > 0 ? (
+            {Array.isArray(data.boughtstocksdata) && data.boughtstocksdata.length > 0 ? (
               data.boughtstocksdata.map((Mystock, index) => (
                 <div key={index} className="insideboxes">
                   <div className="pintopstocks" style={{ marginTop: "15px" }}>
                     <i >&nbsp;&nbsp;{`${Mystock.ticker}`}</i>
                     <i className="font-insideboxes">&nbsp;&nbsp; {Mystock.price}</i>
                     <i className="font-insideboxes">&nbsp;&nbsp; {Mystock.volume}</i>
-                    {
-                      (Mystock.change_amountu > 0) ?
-                        <i className="font-insideboxes" style={{ color: "rgb(81, 201, 81)" }}>&nbsp;&nbsp; {`${Mystock.change_percentage}`}</i> :
-                        <i className="font-insideboxes" style={{ color: " rgb(255, 0, 0)" }}>&nbsp;&nbsp; {`${Mystock.change_percentage}`}</i>
+                    {(Mystock.change_amountu > 0) ?
+                      <i className="font-insideboxes" style={{ color: "rgb(81, 201, 81)" }}>&nbsp;&nbsp; {`${Mystock.change_percentage}`}</i> :
+                      <i className="font-insideboxes" style={{ color: " rgb(255, 0, 0)" }}>&nbsp;&nbsp; {`${Mystock.change_percentage}`}</i>
                     }
                   </div>
                   <div className="button-container-portfolio" style={{ marginBottom: "35px" }}>
@@ -123,8 +112,8 @@ export default function Portfolio() {
         <div className="verticalboxportfolio">
           <h2 style={{ marginLeft: "-550px" }}>My Graph</h2>
           <div className="outsideboxgraph">
-            <Line 
-              data={chartData} 
+            <Line
+              data={chartData}
               options={{
                 ...options,
                 maintainAspectRatio: false, // Disable aspect ratio preservation
